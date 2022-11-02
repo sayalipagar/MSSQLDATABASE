@@ -36,3 +36,17 @@ ALTER TABLE employee_payroll ADD Gender CHAR(1);
 UPDATE employee_payroll SET Gender='M' WHERE Name='himanshu' or Name= 'Sachin';
 UPDATE employee_payroll SET Gender='F' WHERE Name='Priyanshu' or Name= 'Ankita' or Name= 'Nilima';
 SELECT * FROM EMPLOYEE_PAYROLL;
+
+-------------UC7----------------------
+-----------------Finding SUM,AVG,MIN,MAX,COUNT-----------------
+SELECT SUM(Salary) as SumOfSalary FROM employee_payroll;
+SELECT SUM(Salary) as SumOfSalary FROM employee_payroll WHERE Gender='M' GROUP BY Gender;
+SELECT SUM(Salary) as SumOfSalary FROM employee_payroll WHERE Gender='F' GROUP BY Gender;
+
+SELECT AVG(Salary) as Average FROM employee_payroll WHERE Gender='M' GROUP BY Gender;
+SELECT MIN(Salary) as Minimum FROM employee_payroll WHERE Gender='M' GROUP BY Gender;
+
+SELECT MAX(Salary) as Maximum FROM employee_payroll;
+
+SELECT COUNT(Id) as Number_of_Emp FROM employee_payroll WHERE Gender='M' GROUP BY Gender;
+SELECT COUNT(Id) as Number_of_Emp FROM employee_payroll WHERE Gender='F' GROUP BY Gender;
