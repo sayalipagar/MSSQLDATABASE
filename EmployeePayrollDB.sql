@@ -50,3 +50,17 @@ SELECT MAX(Salary) as Maximum FROM employee_payroll;
 
 SELECT COUNT(Id) as Number_of_Emp FROM employee_payroll WHERE Gender='M' GROUP BY Gender;
 SELECT COUNT(Id) as Number_of_Emp FROM employee_payroll WHERE Gender='F' GROUP BY Gender;
+
+---------------------UC8--------------------
+-----Extending employee_payroll table-----------
+
+ALTER TABLE employee_payroll ADD Phone_Number varchar(20);
+------Adding column with DEFAULT value-----
+ALTER TABLE employee_payroll ADD Emp_Address varchar(20) DEFAULT 'INDIA';
+
+ALTER TABLE employee_payroll ADD Emp_DEPT varchar(10)not null DEFAULT 'HR';
+
+INSERT INTO employee_payroll VALUES('Dolly','25000','23-aug-2019','F','9833678738','pune',DEFAULT);
+INSERT INTO employee_payroll VALUES('Tarun','25000','23-feb-2019','M','9833678538',DEFAULT,DEFAULT);
+
+SELECT * FROM EMPLOYEE_PAYROLL;
